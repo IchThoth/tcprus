@@ -39,6 +39,8 @@ func (s *Server) AcceptLoop() {
 			fmt.Println("accept error:", err)
 			continue
 		}
+
+		fmt.Println("new connection to tcp server:", conn.RemoteAddr())
 		// each time there is a new connecton a new go routine is spun up to have a
 		//large number of non blocking connections
 		go s.ReadLoop(conn)
