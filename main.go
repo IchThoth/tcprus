@@ -74,6 +74,8 @@ func (s *Server) ReadLoop(conn net.Conn) {
 			from:    conn.RemoteAddr().String(),
 			payload: buf[:cn],
 		}
+
+		conn.Write([]byte("thank you for your message idolo"))
 	}
 
 }
